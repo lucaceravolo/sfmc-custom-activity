@@ -7,3 +7,10 @@
   to = "/.netlify/functions/config"
   status = 200
   force = true
+
+# Versioned endpoint to diagnose Salesforce's saved custom-activity config.
+[[redirects]]
+  from = "/activity-v3/config.json"
+  to = "/.netlify/functions/config-v3"
+  status = 200
+  force = true
