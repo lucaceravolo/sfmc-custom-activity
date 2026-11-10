@@ -1,0 +1,15 @@
+{
+  "name": "sfmc-journey-builder-custom-activity-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SFMC Journey Builder Custom Activity per Netlify Functions",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}

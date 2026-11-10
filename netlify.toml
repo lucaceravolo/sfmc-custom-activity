@@ -1,0 +1,9 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/activity/config.json"
+  to = "/.netlify/functions/config"
+  status = 200
+  force = true

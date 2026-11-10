@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Custom Activity</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; color: #243047; background: #fff; margin: 0; padding: 28px; }
+    h2 { font-size: 21px; margin: 0 0 10px; } p { color: #516070; line-height: 1.5; }
+    label { display: block; margin: 25px 0 8px; font-weight: bold; }
+    input { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #aeb7c2; border-radius: 6px; font-size: 15px; }
+    small { color: #657282; } #error { color: #a32020; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Custom Activity Node.js</h2>
+  <p>Scrivi un messaggio di test. Quando un contatto raggiunge l'attività, il messaggio viene passato a <code>/execute</code>.</p>
+  <label for="message">Messaggio</label>
+  <input id="message" type="text" maxlength="250" placeholder="Esempio: Attività di test" />
+  <p><small>Il ContactKey viene recuperato da Journey Builder tramite <code>{{Contact.Key}}</code>.</small></p>
+  <p id="error" role="alert"></p>
+  <script src="https://cdn.jsdelivr.net/npm/postmonger@0.0.16/postmonger.min.js"></script>
+  <script src="./customActivity.js"></script>
+</body>
+</html>
