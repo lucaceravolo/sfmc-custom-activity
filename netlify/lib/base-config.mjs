@@ -1,5 +1,6 @@
 /* Configurazione della Custom Activity. Non inserire segreti in questo modulo. */
 export const template = {
+  "key": "__ACTIVITY_KEY__",
   "workflowApiVersion": "1.1",
   "type": "Rest",
   "metaData": {

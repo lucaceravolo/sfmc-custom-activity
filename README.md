@@ -62,3 +62,8 @@ Prova `/activity/config.json` su `http://localhost:8888`. Per Marketing Cloud, s
 - https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/encode-custom-activities-using-jwt-app-signature.html
 - https://docs.netlify.com/build/functions/get-started/
 - https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/
+
+## Correzione v2 — registrazione attività
+Questa versione include `key` al livello principale di `config.json`, oltre a `configurationArguments.applicationExtensionKey`. Entrambi vengono compilati da `JB_ACTIVITY_KEY` e devono coincidere con la **Unique Key del componente Journey Builder Activity**, non con l'ID o il Client Secret dell'Installed Package.
+
+Se Journey Builder mostra «Failed to load custom activity configuration (endpoint index URL is invalid)», ricontrolla nel componente Salesforce che **Endpoint URL** sia esattamente `https://TUO-SITO.netlify.app/activity/` e non `.../activity/index.html` oppure `.../activity/config.json`. Pubblica il commit aggiornato su Netlify e, dopo il deploy, verifica il JSON pubblico.
