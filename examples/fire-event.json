@@ -1,0 +1,9 @@
+{
+  "ContactKey": "TEST-001",
+  "EventDefinitionKey": "INSERISCI_LA_EVENT_DEFINITION_KEY_REALE",
+  "Data": {
+    "SubscriberKey": "TEST-001",
+    "Email": "test@example.com",
+    "message": "Ciao dal sistema esterno"
+  }
+}

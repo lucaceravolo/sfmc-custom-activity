@@ -14,3 +14,9 @@
   to = "/.netlify/functions/config-v3"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/entry-source-v1/config.json"
+  to = "/.netlify/functions/config-entry"
+  status = 200
+  force = true
