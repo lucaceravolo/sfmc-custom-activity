@@ -15,6 +15,9 @@
     #error { min-height:20px; color:#b32424; margin-top:12px; }
     .notice { margin-top:19px; border:1px solid #d4e2eb; border-radius:6px; background:#f5f9fb; padding:12px; }
     code { overflow-wrap:anywhere; }
+    .block-rule { margin-top:25px; padding-top:20px; border-top:1px solid #d4e2eb; }
+    .block-rule h3 { margin:0 0 6px; font-size:18px; }
+    .block-rule p { margin:0 0 12px; }
   </style>
 </head>
 <body>
@@ -27,6 +30,24 @@
          placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" maxlength="36" aria-describedby="help" />
   <small id="help">Serve l'ObjectID/ID GUID della Data Extension, non la CustomerKey (External Key).
     La DE deve essere sendable, con ContactKey/SubscriberKey correttamente mappato.</small>
+
+  <section class="block-rule" aria-labelledby="blockHeading">
+    <h3 id="blockHeading">Condizione di esclusione (facoltativa)</h3>
+    <p>Se il valore del campo indicato coincide con quello configurato, il contatto NON deve entrare nella Journey.</p>
+    <label for="blockField">Nome del campo nella Data Extension</label>
+    <input id="blockField" type="text" spellcheck="false" autocomplete="off"
+           placeholder="EscludiIngresso" maxlength="128" />
+    <small>Nome esatto del campo della DE (rispetta maiuscole, minuscole e spazi).</small>
+    <label for="blockValue" style="margin-top:14px">Valore da escludere</label>
+    <input id="blockValue" type="text" autocomplete="off"
+           placeholder="SI" maxlength="500" />
+    <small>Lascia entrambi i campi vuoti per non definire una regola.</small>
+    <div class="notice"><strong>Importante:</strong> questa schermata salva la regola nella configurazione
+    della Entry Source, ma <strong>non la applica da sola</strong>. Per impedire davvero l'ingresso,
+    configura in Journey Builder il filtro <code>NomeCampo != ValoreEscluso</code>
+    nello step <em>Filter Contacts</em>, oppure implementa un middleware prima della API Events.</div>
+  </section>
+
   <div id="error" role="alert" aria-live="polite"></div>
 
   <div class="notice">
