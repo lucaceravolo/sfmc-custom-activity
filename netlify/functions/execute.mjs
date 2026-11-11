@@ -15,5 +15,17 @@ export default async function handler(request) {
   }));
   // Aggiungi qui un'eventuale chiamata fetch verso un'API esterna,
   // con timeout, validazione, gestione degli errori e idempotenza.
+  const endpoint = 'https://hooksterr.com/hook/i7JLq3EvyTYH8_rTc9fE79fZ2yxZJLymxKzXrKHcyKI/';
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contactKey: input.contactKey, message: input.message })
+    });
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  } catch (error) {
+    console.error('Error calling external API:', error);
+    return Response.json({ status: 'error', message: error.message });
+  }
   return Response.json({ status: 'ok' });
 }
