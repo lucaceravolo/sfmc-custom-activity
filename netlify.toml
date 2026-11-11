@@ -2,21 +2,16 @@
   publish = "public"
   functions = "netlify/functions"
 
-[[redirects]]
-  from = "/activity/config.json"
-  to = "/.netlify/functions/config"
-  status = 200
-  force = true
-
-# Versioned endpoint to diagnose Salesforce's saved custom-activity config.
+# Custom Activity v3 (gia' funzionante)
 [[redirects]]
   from = "/activity-v3/config.json"
   to = "/.netlify/functions/config-v3"
   status = 200
   force = true
 
+# Custom Entry Source v2 (nuovo percorso)
 [[redirects]]
-  from = "/entry-source-v1/config.json"
-  to = "/.netlify/functions/config-entry"
+  from = "/entry-source-v2/config.json"
+  to = "/.netlify/functions/config-entry-v2"
   status = 200
   force = true

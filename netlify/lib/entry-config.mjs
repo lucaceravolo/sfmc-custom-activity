@@ -8,7 +8,7 @@ export const entryTemplate = {
   workflowApiVersion: '1.1',
   type: 'EVENT',
   metaData: {
-    icon: '__BASE_URL__/entry-source-v1/images/icon.svg',
+    icon: '__BASE_URL__/entry-source-v2/images/icon.svg',
     isConfigured: false
   },
   lang: {
@@ -31,7 +31,7 @@ export const entryTemplate = {
   },
   userInterfaces: {
     configModal: {
-      url: '__BASE_URL__/entry-source-v1/index.html'
+      url: '__BASE_URL__/entry-source-v2/index.html'
     },
     summary: [
       { label: 'deLabel', valuePath: 'dataExtensionId' },

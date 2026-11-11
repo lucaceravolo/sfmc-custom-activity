@@ -1,12 +1,12 @@
 import { entryTemplate } from '../lib/entry-config.mjs';
 
+// Questa Function serve SOLO il config.json di /entry-source-v2/.
+// La Custom Activity v3 usa separatamente /activity-v3/config.json.
 export default async function handler(request) {
   if (request.method !== 'GET') {
     return new Response('Method not allowed', { status: 405 });
   }
 
-  // Evita di far acquisire a Salesforce una configurazione con chiave fittizia.
-  // Configura JB_ENTRY_KEY dalla Unique Key del nuovo componente prima del test.
   const key = (process.env.JB_ENTRY_KEY || '').trim();
   if (!key) {
     return Response.json(
@@ -21,8 +21,8 @@ export default async function handler(request) {
   const config = structuredClone(entryTemplate);
   config.key = key;
   config.configurationArguments.applicationExtensionKey = key;
-  config.metaData.icon = `${baseUrl}/entry-source-v1/images/icon.svg`;
-  config.userInterfaces.configModal.url = `${baseUrl}/entry-source-v1/index.html`;
+  config.metaData.icon = `${baseUrl}/entry-source-v2/images/icon.svg`;
+  config.userInterfaces.configModal.url = `${baseUrl}/entry-source-v2/index.html`;
 
   return Response.json(config, {
     status: 200,
