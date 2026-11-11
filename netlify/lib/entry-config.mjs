@@ -7,6 +7,11 @@ export const entryTemplate = {
   key: '__ENTRY_KEY__',
   workflowApiVersion: '1.1',
   type: 'EVENT',
+
+  // Classificazione della Entry Source
+  group: 'self',
+  entrySourceType: 'EVENT',
+
   metaData: {
     icon: '__BASE_URL__/entry-source-v2/images/icon.svg',
     isConfigured: false
