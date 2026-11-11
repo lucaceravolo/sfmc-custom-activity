@@ -15,3 +15,22 @@
   to = "/.netlify/functions/config-entry-v2"
   status = 200
   force = true
+
+# Nuovo URL per richiedere la configurazione aggiornata
+[[redirects]]
+  from = "/entry-source-refresh/config.json"
+  to = "/.netlify/functions/config-entry-v2"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/entry-source-refresh/"
+  to = "/entry-source-v2/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/entry-source-refresh/*"
+  to = "/entry-source-v2/:splat"
+  status = 200
+  force = true
