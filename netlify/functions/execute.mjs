@@ -15,7 +15,7 @@ export default async function handler(request) {
   }));
   // Aggiungi qui un'eventuale chiamata fetch verso un'API esterna,
   // con timeout, validazione, gestione degli errori e idempotenza.
-  const endpoint = 'https://hooksterr.com/hook/i7JLq3EvyTYH8_rTc9fE79fZ2yxZJLymxKzXrKHcyKI/';
+  const endpoint = 'https://hooksterr.com/hook/MrSpq1fmn7Jsma-5W35n7ygyT0n386zG2ny0RCDpNrU/';
   try {
     const response = await fetch(endpoint, {
       method: 'POST',
